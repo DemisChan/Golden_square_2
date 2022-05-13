@@ -41,5 +41,10 @@ RSpec.describe TodoOrganizer do
       todo_tasks.complete('Pair with Victor')
       expect(todo_tasks.list).to eq ['Finish Challenge 9']
     end
+    it 'fails' do
+      todo_tasks = TodoOrganizer.new
+      todo_tasks.add('Finish Challenge 9')
+      expect { todo_tasks.complete('Pair with Victor') }.to raise_error 'No such task'
+    end
   end
 end

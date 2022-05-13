@@ -19,6 +19,7 @@ class TodoOrganizer
   end
 
   def complete(task)
+    fail 'No such task' unless @todo_container.include? task
     @todo_container.delete(task)
   end
 end
