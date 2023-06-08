@@ -18,7 +18,7 @@ class MusicLibrary
   
   def search_by_title(keyword) # keyword is a string
     # Returns a list of tracks with titles that include the keyword
-    @tracks.select do |track|
+    return @tracks.select do |track|
       track.title.include? keyword
     end
   end
