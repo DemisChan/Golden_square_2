@@ -12,7 +12,7 @@ RSpec.describe 'Check if #TODO is in the text' do
   end
 
   it 'returns True if #TODO is in text' do
-    result = todo_track('# TODO Read a book.')
+    result = todo_track('#TODO Read a book.')
     expect(result).to eq 'True'
   end
 

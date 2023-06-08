@@ -12,15 +12,15 @@ def decode(ciphertext, key)
 # range did not include 'z'
   plaintext_chars = ciphertext.chars.map do |char|
     cipher[char.ord - 65]
-# blackets function was the other way around
+# brackets function was the other way around
   end
   return plaintext_chars.join
 end
 
 # Intended output:
 #
-# > encode("theswiftfoxjumpedoverthelazydog", "secretkey")
+p encode("theswiftfoxjumpedoverthelazydog", "secretkey")
 # => "EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL"
 #
-# > decode("EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL", "secretkey")
+p decode("EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL", "secretkey")
 # => "theswiftfoxjumpedoverthelazydog"
