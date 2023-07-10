@@ -1,4 +1,6 @@
 require "diary_entry"
+require "diary"
+
 
 RSpec.describe DiaryEntry_2 do
   context "initialize class" do
@@ -20,6 +22,15 @@ RSpec.describe DiaryEntry_2 do
     it "Return duration of reading" do
       diary_entry = DiaryEntry_2.new("13th May 2022", "Demis and Emma are pairing")
       expect(diary_entry.reading_time(2)).to eq 3
+    end
+  end
+
+  context "counting words with doubles" do
+    it "Return number of words" do
+      diary = Diary.new
+      fake = double :DiaryEntry, count_words: 3
+      diary.add(fake)
+      expect(diary.count_words).to eq 3
     end
   end
 end
